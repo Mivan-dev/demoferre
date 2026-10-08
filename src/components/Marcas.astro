@@ -1,0 +1,51 @@
+---
+const token = import.meta.env.PUBLIC_LOGO_TOKEN;
+
+const marcas = [
+  { nombre: 'Bosch',            dominio: 'bosch.com'            },
+  { nombre: 'DeWalt',           dominio: 'dewalt.com'           },
+  { nombre: 'Bahco',            dominio: 'bahco.com'            },
+  { nombre: 'Lincoln Electric', dominio: 'lincolnelectric.com'  },
+  { nombre: 'Stanley',          dominio: 'stanleytools.com'     },
+  { nombre: '3M',               dominio: '3m.com'               },
+  { nombre: 'Truper',           dominio: 'truper.com'           },
+  { nombre: 'Urrea',            dominio: 'urrea.com'            },
+  { nombre: 'Makita',           dominio: 'makita.com'           },
+  { nombre: 'Hilti',            dominio: 'hilti.com'            },
+  { nombre: 'Loctite',          dominio: 'loctite.com'          },
+  { nombre: 'Norton',           dominio: 'nortonabrasives.com'  },
+];
+---
+<section id="marcas" class="py-24 bg-gris-oscuro">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Encabezado -->
+    <div class="mb-14 fade-up">
+      <p class="font-body text-amarillo text-sm font-600 tracking-widest uppercase mb-4">
+        Con quiénes trabajamos
+      </p>
+      <h2 class="font-display font-800 uppercase text-blanco leading-none" style="font-size: clamp(2.5rem, 5vw, 4rem)">
+        Marcas <span class="text-amarillo">líderes</span>
+      </h2>
+    </div>
+
+    <!-- Grid de marcas -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-gris-medio fade-up" style="transition-delay: 0.15s">
+      {marcas.map((marca) => (
+        <div class="bg-negro px-8 py-10 flex flex-col items-center justify-center gap-4 hover:bg-gris-medio transition-colors duration-300 group">
+          <img
+            src={`https://img.logo.dev/${marca.dominio}?token=${token}&size=80&format=png`}
+            alt={marca.nombre}
+            width="80"
+            height="80"
+            class="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+          />
+          <span class="font-body text-gris-texto text-xs uppercase tracking-wider group-hover:text-amarillo transition-colors duration-300">
+            {marca.nombre}
+          </span>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
