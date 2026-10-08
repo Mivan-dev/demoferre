@@ -1,0 +1,73 @@
+---
+---
+
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- LOGO -->
+        <a href="#inicio" class="font-display text-2xl font-800 tracking-wider text-blanco uppercase hover:text-amarillo transition-colors">
+            VEP<span class="text-amarillo">RO</span>MET
+        </a>
+
+        <!-- Links desktop -->
+        <ul class="hidden md:flex items-center gap-8 font-body text-sm font-500 text-gris-texto">
+            <li><a href="#quienes" class="hover:text-amarillo transition-colors uppercase tracking-wide">Quiénes somos</a></li>
+            <li><a href="#rubros" class="hover:text-amarillo transition-colors uppercase tracking-wide">Rubros</a></li>
+            <li><a href="#marcas" class="hover:text-amarillo transition-colors uppercase tracking-wide">Marcas</a></li>
+            <li><a href="#contacto" class="hover:text-amarillo transition-colors uppercase tracking-wide">Contacto</a></li>
+        </ul>
+
+        <!-- CTA -->
+        <a href="https://wa.me/5493516566484" target="_blank" rel="noopener noreferrer"
+        class="hidden md:inline-flex items-center gap-2 bg-amarillo text-negro font-body font-600 text-sm px-5 py-2.5 hover:bg-amarillo/80 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.552 4.103 1.518 5.83L.057 23.998l6.305-1.65A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.37l-.36-.214-3.733.977.998-3.645-.234-.374A9.818 9.818 0 1 1 12 21.818z"/>
+            </svg>
+            Contactanos
+        </a>
+
+        <!-- Hamburger mobile -->
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+            <span class="block w-6 h-0.5 bg-blanco rounded transition-all"></span>
+            <span class="block w-6 h-0.5 bg-blanco rounded transition-all"></span>
+            <span class="block w-6 h-0.5 bg-blanco rounded transition-all"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gris-oscuro border-t border-gris-medio px-6 py-4">
+        <ul class="flex flex-col gap-4 font-body text-sm font-500 text-gris-texto uppercase tracking-wide">
+        <li><a href="#quienes" class="block hover:text-amarillo transition-colors">Quiénes somos</a></li>
+        <li><a href="#rubros" class="block hover:text-amarillo transition-colors">Rubros</a></li>
+        <li><a href="#marcas" class="block hover:text-amarillo transition-colors">Marcas</a></li>
+        <li><a href="#contacto" class="block hover:text-amarillo transition-colors">Contacto</a></li>
+        <li>
+            <a
+            href="https://wa.me/5493516566484"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-amarillo text-negro font-600 px-4 py-2"
+            >
+            Contactanos
+            </a>
+        </li>
+        </ul>
+    </div>
+</header>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav?.classList.add('bg-negro/95', 'backdrop-blur-sm', 'border-b', 'border-amarillo/20');
+    } else {
+      nav?.classList.remove('bg-negro/95', 'backdrop-blur-sm', 'border-b', 'border-amarillo/20');
+    }
+  });
+
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+</script>
